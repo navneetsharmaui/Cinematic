@@ -1,37 +1,40 @@
 package com.navneet.ryuhadouken.cinematic;
 
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.TextView;
+import android.os.Bundle;
+import android.view.View;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+import mehdi.sakout.aboutpage.AboutPage;
+import mehdi.sakout.aboutpage.Element;
 
 /**
  * Created by ryuhadouken on 17/5/16.
  */
 public class AboutActivity extends AppCompatActivity {
 
-    private final static String URL = "https://www.linkedin.com/in/navneetsharma3";
-
-    @Bind(R.id.tvTitle)
-    TextView title;
-    @Bind(R.id.tvDeveloper) TextView developer;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
 
-        ButterKnife.bind(this);
-    }
+        Element versionElement = new Element();
+        versionElement.setTitle("Version 1.1");
 
-    @OnClick({R.id.tvDeveloper,R.id.tvTitle})
-    public void onClick(){
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL));
-        startActivity(browserIntent);
+        View aboutPage = new AboutPage(this)
+                .isRTL(false)
+                .setImage(R.drawable.ic_launcher)
+                .setDescription("This app helps users to discover popular, top rated, currently playing and upcoming movies on the web.User can also search for movies. Save their favorite movies locally and access it offline. It displays a scrolling grid of movie trailers and launches a details screen is launched whenever a particular movie is selected. Where users can watch trailers and read reviews about the movies. Users can also share movie plots and trailers.")
+                .addItem(versionElement)
+                .addGroup("Connect with us")
+                .addEmail("navneetnnavneet1@gmail.com")
+                .addFacebook("nannuzz15")
+                .addTwitter("navneet240")
+                .addYoutube("UC1SmRKYhTCAJdtFupIEsM4Q")
+                .addPlayStore("com.navneet.ryuhadouken.cinematic")
+                .addInstagram("navneetzz")
+                .addGitHub("navneetzz")
+                .addWebsite("http://www.navneetsharma.in")
+                .create();
+
+        setContentView(aboutPage);
     }
 }
