@@ -22,7 +22,7 @@ public class AboutActivity extends AppCompatActivity {
         View aboutPage = new AboutPage(this)
                 .isRTL(false)
                 .setImage(R.drawable.ic_launcher)
-                .setDescription("This app helps users to discover popular, top rated, currently playing and upcoming movies on the web.User can also search for movies. Save their favorite movies locally and access it offline. It displays a scrolling grid of movie trailers and launches a details screen is launched whenever a particular movie is selected. Where users can watch trailers and read reviews about the movies. Users can also share movie plots and trailers.")
+                .setDescription("This app helps users to discover popular, top rated, currently playing and upcoming movies. The user can also search for movies whether it is Hollywood or Bollywood. Users can also save their favorite movies and access it offline. A details screen is launched whenever a particular movie is selected. Where users can watch trailers and read reviews about the movies.")
                 .addItem(versionElement)
                 .addGroup("Connect with us")
                 .addEmail("navneetnnavneet1@gmail.com")
