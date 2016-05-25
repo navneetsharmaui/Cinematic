@@ -17,7 +17,7 @@ public class AboutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         Element versionElement = new Element();
-        versionElement.setTitle("Version 1.1");
+        versionElement.setTitle("Version 2.0");
 
         View aboutPage = new AboutPage(this)
                 .isRTL(false)
