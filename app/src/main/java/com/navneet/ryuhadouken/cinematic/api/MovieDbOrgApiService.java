@@ -12,7 +12,7 @@ import retrofit2.http.Query;
  */
 public interface MovieDbOrgApiService {
 
-    String API_KEY = "d198b9364d579a80e0ecd6f5725b88f4";
+    String API_KEY = "API key here";
 
     String API_BASE_URL = "http://api.themoviedb.org/3/";
     String IMAGE_BASE_URL = "http://image.tmdb.org/t/p/";
