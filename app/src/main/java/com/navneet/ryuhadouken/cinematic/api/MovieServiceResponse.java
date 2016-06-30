@@ -10,7 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by ryuhadouken on 17/5/16.
+ * Created by ryuhadouken on 17/4
+ * /16.
  */
 public class MovieServiceResponse implements Parcelable {
 

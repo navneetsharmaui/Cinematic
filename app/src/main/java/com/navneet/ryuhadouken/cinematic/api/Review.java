@@ -7,7 +7,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Created by ryuhadouken on 17/5/16.
+ * Created by ryuhadouken on 17/4/16.
  */
 public class Review implements Parcelable {
 

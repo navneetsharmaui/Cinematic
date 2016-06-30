@@ -50,7 +50,7 @@ public class Utility {
     }
 
     public static void saveSortPreference(Context context, @MovieDbOrgApiService.SORT_BY String sortBy){
-        SharedPreferences preferences = context.getSharedPreferences(MY_PREFS,Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getSharedPreferences(MY_PREFS, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString(SORT_PREFERENCE,sortBy);
         editor.apply();

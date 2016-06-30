@@ -8,11 +8,11 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
- * Created by ryuhadouken on 17/5/16.
+ * Created by ryuhadouken on 17/4/16.
  */
 public interface MovieDbOrgApiService {
 
-    String API_KEY = "API key here";
+    String API_KEY = "API_KEY";
 
     String API_BASE_URL = "http://api.themoviedb.org/3/";
     String IMAGE_BASE_URL = "http://image.tmdb.org/t/p/";
