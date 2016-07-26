@@ -4,10 +4,15 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -52,6 +57,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private static final int FIRST_PAGE = 1;
     private static final int FAVORITE_MOVIES_LOADER = 0;
 
+    private SectionsPagerAdapter mSectionsPagerAdapter;
+    private ViewPager mViewPager;
+
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.pbProgressBar)
@@ -67,6 +75,10 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     View emptyListContainer;
     @Bind(R.id.tvEmptyListContainerText)
     TextView emptyListDetail;
+    @Bind(R.id.container)
+    ViewPager mViewPager;
+    @Bind(R.id.tabs)
+    TabLayout tabLayout;
 
 
     private boolean mTwoPane;
@@ -534,4 +546,40 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             emptyListContainer.setVisibility(View.GONE);
         }
     }
+
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+
+        public SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            switch (position){
+                case 0: return MoviesFragment.newInstance();
+
+                case 1: return TVShowFragment.newInstance();
+
+            }
+            return MoviesFragment.newInstance();
+        }
+
+        @Override
+        public int getCount() {
+            return 2;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            switch (position) {
+                case 0:
+                    return "Movies";
+                case 1:
+                    return "TV Shows";
+            }
+            return null;
+        }
+
+    }
+
 }
